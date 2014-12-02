@@ -8,7 +8,8 @@
   var rootElement = window.document.documentElement,
     $rootElement = $(rootElement);
 
-  addGlobalEventListener('change', markValue);
+  // This was changed from change to blur... we disable change events in our app
+  addGlobalEventListener('blur', markValue);
   addValueChangeByJsListener(markValue);
 
   $.prototype.checkAndTriggerAutoFillEvent = jqCheckAndTriggerAutoFillEvent;
@@ -134,7 +135,9 @@
   function triggerChangeEvent(element) {
     var doc = window.document;
     var event = doc.createEvent("HTMLEvents");
-    event.initEvent("change", true, true);
+
+    // Custom event for autofill purposes only.
+    event.initEvent("autofill", true, true);
     element.dispatchEvent(event);
   }
 

@@ -1,9 +1,9 @@
 {
   "name": "autofill-event",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tbosch/autofill-event.git"
+    "url": "https://github.com/erictsai6/autofill-event.git"
   },
   "devDependencies": {
     "bower": "~1.2.2",
